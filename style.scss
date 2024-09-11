@@ -1,0 +1,186 @@
+$no_algos: 6;
+$primary-color: #3498db; // Fresh blue
+$primary-dark-color: #2980b9; // Darker shade of blue for better hover effect
+$secondary-color: #2ecc71; // Vibrant green
+$background-color: #2c3e50; // Dark slate gray
+$light-background-color: #ecf0f1; // Light gray
+$text-color: #fff; // White for text
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; // Modern font
+    font-size: 16px; // Slightly smaller font size for a cleaner look
+    font-weight: normal;
+    line-height: 1.6; // Improved readability
+    text-transform: none;
+}
+
+nav
+{
+    background-color: $background-color;
+    color: $text-color;
+    display: grid;
+    grid-template-columns: 25% 75%; // Adjusted column ratio for better space utilization
+    column-gap: 4%;
+    padding: 2% 5%; // Increased padding for better spacing
+
+    .array-inputs
+    {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        place-content: center;
+        padding: 4% 0;
+
+        #a_size, #a_speed
+        {
+            padding: 4% 0;
+        }
+
+        #a_generate
+        {
+            background-color: $primary-color;
+            border: none;
+            outline: none;
+            color: $text-color;
+            padding: 4% 0;
+            border-radius: 4px; // Rounded corners for modern look
+            text-align: center; // Center text
+            &:hover
+            {
+                cursor: pointer;
+                background-color: $primary-dark-color; // Darker shade on hover
+            }
+        }
+    }
+
+    .header_right
+    {
+        display: flex;
+        flex-direction: column;
+
+        .nav-heading
+        {
+            font-size: 2em; // Adjusted for better hierarchy
+            padding: 1% 0;
+            color: $secondary-color; // Added color for emphasis
+        }
+
+        .algos
+        {
+            display: grid;
+            grid-template-columns: repeat($no_algos, 1fr);
+            place-content: center;
+            gap: 10px; // Added gap between buttons
+            padding: 1% 0;
+
+            button
+            {
+                background-color: transparent;
+                border: 2px solid $primary-color; // Border for better button definition
+                color: $text-color;
+                outline: none;
+                padding: 8px 16px; // Adjusted padding
+                font-size: 1.1em;
+                border-radius: 4px; // Rounded corners for modern look
+                transition: background-color 0.3s, color 0.3s; // Smooth transition
+                &:hover
+                {
+                    background-color: $primary-color;
+                    color: $text-color;
+                    cursor: pointer;
+                }
+            }
+
+            .butt_locked
+            {
+                background-color: $background-color;
+                border: 2px solid $text-color; // Border to indicate locked state
+                cursor: not-allowed;
+                &:hover
+                {
+                    background-color: $background-color;
+                    cursor: not-allowed;
+                }
+            }
+
+            .butt_selected
+            {
+                background-color: $light-background-color;
+                color: $secondary-color;
+                border: 2px solid $secondary-color; // Border for selected state
+                &:hover
+                {
+                    background-color: lighten($light-background-color, 5%);
+                    cursor: pointer;
+                }
+            }
+
+            .butt_unselected
+            {
+                border: 2px solid $primary-color; // Border for unselected state
+                &:hover
+                {
+                    background-color: $primary-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+section
+{
+    display: grid;
+    grid-template-columns: 10% 80% 10%; // Adjusted for better content focus
+
+    .Complexity_Containers
+    {
+        margin-top: 5%; // Reduced margin for better alignment
+
+        .Pair_Definitions
+        {
+            margin-top: 5%; // Consistent margin
+
+            p
+            {
+                display: inline;
+            }
+
+            p.Sub_Heading
+            {
+                font-size: 1.1em; // Slightly adjusted for emphasis
+                color: $secondary-color;
+                font-weight: bold; // Added bold for emphasis
+            }
+        }
+    }
+
+    #Info_Cont1, #Info_Cont2
+    {
+        padding: 8% 4%;
+        background-color: $light-background-color;
+
+        h3
+        {
+            text-decoration: underline;
+            color: $primary-color;
+        }
+    }
+
+    #array_container
+    {
+        display: flex;
+        width: 100%;
+        height: 70vh;
+        background-color: $light-background-color;
+        border-radius: 4px; // Rounded corners for the container
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    }
+}
+
+.hide
+{
+    display: none;
+}
